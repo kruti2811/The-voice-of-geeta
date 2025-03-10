@@ -1,22 +1,70 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Gradient Background */
 body {
-  margin-bottom: 60px;
+    background: linear-gradient(-142deg, #1E1E2E, #6A0572);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
+
+/* Container for Layout */
+
+/* Title Styling */
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFA500; /* Orange shade for emphasis */
+    margin-bottom: 10px;
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-size: 16px;
+    color: #CCCCCC;
+    margin-bottom: 30px;
+}
+
+/* Explore Button */
+.explore-btn {
+    background-color: #FF7300;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+/* Card Container */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 56px; /* Space between cards */
+    margin-top: 50px;
+}
+
+/* Individual Card Styling */
+.card {
+    width: 402.91px;
+    height: 322px;
+    background: rgba(217, 217, 217, 0.2);
+    padding: 50px 9px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    /* Card Title */
+    .card h3 {
+        font-size: 30px;
+        margin-bottom: 51px; /* Space between title and description */
+    }
+
+    /* Card Text */
+    .card p {
+        font-size: 18px;
+/*        line-height: auto;*/
+    }

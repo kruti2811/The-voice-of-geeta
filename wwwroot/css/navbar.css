@@ -1,0 +1,55 @@
+﻿/* Navbar Styling */
+.navbar {
+    background: linear-gradient(-142deg, #1E1E2E, #6A0572);
+   
+    align-items: center;
+    justify-content: space-between;
+    margin : 0px;
+    
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        width: 40px; /* Adjust size as needed */
+        margin-right: 0px;
+    }
+
+    .logo span {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 103px;
+}
+
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: #FFA500;
+        }
+
+/* Profile Icon */
+.profile-icon img {
+    width: 48px;
+    height:48px;
+    cursor: pointer;
+}

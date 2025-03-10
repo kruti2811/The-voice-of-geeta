@@ -7,4 +7,10 @@
     <RootNamespace>The_voice_of_geeta</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shloka\" />
+    <Folder Include="Views\Teachings\" />
+    <Folder Include="Views\Vedas\" />
+  </ItemGroup>
+
 </Project>

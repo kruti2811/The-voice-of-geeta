@@ -1,10 +1,8 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using The_voice_of_geeta.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace The_voice_of_geeta.Controllers
 {
-    public class HomeController : Controller
+    public class ShlokaController : Controller
     {
         public IActionResult Index()
         {
