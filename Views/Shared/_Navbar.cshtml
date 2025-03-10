@@ -5,6 +5,10 @@
             <img src="~/images/Rose.png" alt="Voice of Geeta" />
             <span>Voice of Geeta</span>
         </div>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
         <ul class="nav-links">
             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
             <li><a href="@Url.Action("Shloka", "Home")">Shloka</a></li>
@@ -12,7 +16,13 @@
             <li><a href="@Url.Action("Teachings", "Home")">Teachings</a></li>
         </ul>
         <div class="profile-icon">
-            <img src="~/images/profile-icon.png" alt="" />
+            <img src="~/images/profile.png" alt="" />
         </div>
     </div>
 </nav>
+
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+</script>
