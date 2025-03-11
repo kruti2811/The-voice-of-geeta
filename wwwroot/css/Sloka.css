@@ -65,3 +65,24 @@ body {
         color: #fff;
         margin: 0;
     }
+
+.buttons {
+    margin-top: 10px;
+}
+
+.video-btn, .audio-btn {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+    gap:10px;
+}
+
+    .video-btn:hover, .audio-btn:hover {
+        background-color: #ffcc00;
+    }
