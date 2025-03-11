@@ -10,5 +10,21 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
+        
+
+        public IActionResult Sloka()
+        {
+            return View();
+        }
+
+        public IActionResult Vedas()
+        {
+            return View();
+        }
+
+        public IActionResult Teachings()
+        {
+            return View();
+        }
     }
 }
