@@ -12,7 +12,7 @@ namespace The_voice_of_geeta.Controllers
         }
         
 
-        public IActionResult Sloka()
+        public IActionResult Adhyay()
         {
             return View();
         }
