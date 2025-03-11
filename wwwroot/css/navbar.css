@@ -1,11 +1,12 @@
 ﻿/* Navbar Styling */
 .navbar {
     background: linear-gradient(-142deg, #1E1E2E, #6A0572);
-   
     align-items: center;
     justify-content: space-between;
-    margin : 0px;
-    
+    margin: 0px;
+    padding: 10px 20px;
+    display: flex;
+    position: relative;
 }
 
 /* Logo Styling */
@@ -16,12 +17,12 @@
 
     .logo img {
         width: 40px; /* Adjust size as needed */
-        margin-right: 0px;
+        margin-left: -30px;
     }
 
     .logo span {
         color: white;
-        font-size: 40px;
+        font-size: 35px;
         font-weight: bold;
     }
 
@@ -29,7 +30,9 @@
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 103px;
+    gap: 80px;
+    padding-top: 10px;
+    transition: max-height 0.3s ease-in-out;
 }
 
     .nav-links li {
@@ -50,6 +53,60 @@
 /* Profile Icon */
 .profile-icon img {
     width: 48px;
-    height:48px;
+    height: 48px;
     cursor: pointer;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .nav-links {
+        gap: 40px;
+    }
+
+        .nav-links a {
+            font-size: 22px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #1E1E2E;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            padding: 10px 0;
+        }
+
+        .nav-links a {
+            font-size: 20px;
+        }
+
+    .profile-icon {
+        display: none; /* Hide profile icon in mobile */
+    }
 }
