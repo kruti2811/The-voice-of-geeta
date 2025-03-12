@@ -1,0 +1,51 @@
+﻿﻿ /* General Styling */
+body {
+    background: linear-gradient(135deg, #1E1E2E, #6A0572);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Title Styling */
+h1 {
+    margin-top: 50px;
+    font-size: 36px;
+    color: #FFA500;
+    margin-bottom: 50px;
+}
+
+/* Teachings Grid */
+.teachings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 50px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Individual Teaching Card */
+.teaching-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+    .teaching-card:hover {
+        transform: scale(1.05);
+    }
+
+    /* Card Title */
+    .teaching-card h2 {
+        color: #FFA500;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Card Text */
+    .teaching-card p {
+        font-size: 16px;
+        color: white;
+    }
