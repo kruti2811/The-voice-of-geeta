@@ -8,9 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Shloka\" />
-    <Folder Include="Views\Teachings\" />
-    <Folder Include="Views\Vedas\" />
+    <Compile Remove="Views\Shloka\**" />
+    <Compile Remove="Views\Teachings\**" />
+    <Compile Remove="Views\Vedas\**" />
+    <Content Remove="Views\Shloka\**" />
+    <Content Remove="Views\Teachings\**" />
+    <Content Remove="Views\Vedas\**" />
+    <EmbeddedResource Remove="Views\Shloka\**" />
+    <EmbeddedResource Remove="Views\Teachings\**" />
+    <EmbeddedResource Remove="Views\Vedas\**" />
+    <None Remove="Views\Shloka\**" />
+    <None Remove="Views\Teachings\**" />
+    <None Remove="Views\Vedas\**" />
   </ItemGroup>
 
   <ItemGroup>
