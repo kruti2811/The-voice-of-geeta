@@ -1,0 +1,85 @@
+﻿﻿ /* Background & Overall Page Styling */
+.shloka-container {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(-142deg, #1E1E2E, #6A0572);
+    color: white;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FFA500;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #D9D9D9;
+}
+
+/* ✨ Wrapper Box with Stroke Border & Blur */
+.shloka-wrapper {
+    width: 85%;
+    margin: auto;
+    padding: 30px;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.8); /* White stroke border */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3); /* White glow effect */
+    backdrop-filter: blur(15px); /* Layer blur effect */
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+}
+
+    /* Section Title */
+    .shloka-wrapper h2 {
+        color: #FFA500;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+/* 🌟 Shloka Grid */
+.shloka-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 🌟 Shloka Cards */
+.shloka-card {
+    background: transparent;
+    border: 2px solid #FFA500;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 165, 0, 0.3); /* Orange glow */
+}
+
+    /* Hover Effect */
+    .shloka-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 25px rgba(255, 165, 0, 0.5);
+    }
+
+    .shloka-card h3 {
+        color: #FFA500;
+        margin-bottom: 10px;
+    }
+
+    .shloka-card p {
+        font-size: 16px;
+        color: white;
+        line-height: 1.5;
+    }
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .shloka-grid {
+        grid-template-columns: 1fr;
+    }
+}
