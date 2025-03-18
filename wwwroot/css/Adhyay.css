@@ -7,14 +7,34 @@ body {
     margin: 0;
     padding: 0;
 }
+.adhyay-title-btn {
+    background: none; /* Remove default button background */
+    border: none; /* Remove border */
+    color: yellow; /* Match title color */
+    font-size: 18px; /* Match title font size */
+    font-weight: bold; /* Match title font weight */
+    cursor: pointer; /* Show pointer on hover */
+    text-decoration: none; /* Remove underline */
+}
+
+.adhyay-title-btn:hover {
+        color: orange; /* Slight color change on hover */
+    }
+
+.adhyay-title {
+    color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 /* Title Section */
-.title {
+/*.title {
     font-size: 32px;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin-top: 20px;
-}
+}*/
 
 .subtitle {
     font-size: 16px;

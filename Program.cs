@@ -28,5 +28,27 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Adhyay}/{id?}");
+
+    // Corrected Route for Redirecting to Shloka Page
+    endpoints.MapControllerRoute(
+        name: "shloka",
+        pattern: "shloka/{id?}",
+        defaults: new { controller = "Home", action = "Shloka" });
+});
+
+
+
+
+
+
+
 app.Run();
 
