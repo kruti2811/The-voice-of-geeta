@@ -2,10 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>The_voice_of_geeta</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Shloka\**" />
+    <Compile Remove="Views\Teachings\**" />
+    <Compile Remove="Views\Vedas\**" />
+    <Content Remove="Views\Shloka\**" />
+    <Content Remove="Views\Teachings\**" />
+    <Content Remove="Views\Vedas\**" />
+    <EmbeddedResource Remove="Views\Shloka\**" />
+    <EmbeddedResource Remove="Views\Teachings\**" />
+    <EmbeddedResource Remove="Views\Vedas\**" />
+    <None Remove="Views\Shloka\**" />
+    <None Remove="Views\Teachings\**" />
+    <None Remove="Views\Vedas\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
