@@ -1,10 +1,17 @@
+using Microsoft.EntityFrameworkCore;
 using The_voice_of_geeta;
+using The_voice_of_geeta.DATA;
+using Microsoft.Data.SqlClient;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<DataContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("con"))
+    );
 
 var app = builder.Build();
 

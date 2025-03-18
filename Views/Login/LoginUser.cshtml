@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewData["Title"] = "LoginUser";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Voice of Geeta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+
+        .login-container {
+            display: flex;
+            width: 900px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .login-form {
+            padding: 40px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .login-form h1 {
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+        .subtitle {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+            .subtitle img {
+                width: 20px;
+                margin-left: 10px;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            height: 45px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            height: 45px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .btn-submit:hover {
+                background-color: #0056b3;
+            }
+
+        .forgot-password {
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .forgot-password:hover {
+                text-decoration: underline;
+            }
+
+        .login-image {
+            width: 50%;
+            background: url('/images/login-bg.jpg') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Side: Login Form -->
+        <div class="login-form">
+            <h1>Login</h1>
+            <div class="subtitle">
+                Start Your Life with Divine Wisdom!
+                <img src="/images/icon.png" alt="Icon">
+            </div>
+            <form method="post" asp-action="LoginUser" asp-controller="Auth">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="login-image"></div>
+    </div>
+</body>
+</html>
