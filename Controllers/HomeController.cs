@@ -16,6 +16,11 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
+        public IActionResult ShlokaList(int id)
+        {
+            ViewBag.AdhyayId = id;
+            return View();
+        }
 
         public IActionResult Vedas()
         {
