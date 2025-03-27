@@ -15,13 +15,14 @@ body {
 
 /* Heading */
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    margin-top : 30px;
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 /* Highlighted Title */
 .title {
+    font-size: 36px;
     color: orange;
     font-weight: bold;
 }
@@ -31,21 +32,22 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
 }
 
 /* Veda Button */
 .veda-item {
-    width: 350px;
+    width: 980px;
     position: relative;
     text-align: center;
+
 }
 
 .veda-btn {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid orange;
     color: white;
-    font-size: 18px;
+    font-size: 25px;
     padding: 15px;
     width: 100%;
     border-radius: 10px;
@@ -60,7 +62,7 @@ h2 {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid orange;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     padding: 0 15px;
     text-align: center;
     border-radius: 10px;

@@ -50,13 +50,14 @@
             <img src="/images/logo.png" alt="Project Logo" width="50">
             <h4>The Voice of Geeta</h4>
         </div>
-        <a asp-area="Admin" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
-        <a asp-area="Admin" asp-controller="Admin" asp-action="ActiveUsers" >Active Users</a>
-        <a asp-area="Admin" asp-controller="Admin" asp-action="DailyShlokas" >Daily Shlokas</a>
-        <a asp-area="Admin" asp-controller="Admin" asp-action="Profile">Profile</a>
-        <a asp-controller="AdminAuth" asp-action="Login">Logout</a>
+        <ul class="nav-links">
+        <li> <a href="@Url.Action("Dashboard", "Home")">Dashboard</a></li>
+        <li> <a href="@Url.Action("DailyShlokas", "Home")">Daily Shlokas</a></li>
+        <li> <a href="@Url.Action("ActiveUsers", "Home")">Active Users</a></li>
+        <li> <a href="@Url.Action("Profile", "Home")">Profile</a></li>
+        @* <a asp-controller="AdminAuth" asp-action="Login">Logout</a> *@
 
-
+        </ul>
     </div>
     <div class="content">
         <div class="topbar">Admin Panel</div>

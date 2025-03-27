@@ -3,10 +3,13 @@
     background: linear-gradient(-142deg, #1E1E2E, #6A0572);
     align-items: center;
     justify-content: space-between;
-    margin: 0px;
+    margin: -50px;
     padding: 10px 20px;
     display: flex;
     position: relative;
+}
+.container {
+padding-bottom : 10px;
 }
 
 /* Logo Styling */

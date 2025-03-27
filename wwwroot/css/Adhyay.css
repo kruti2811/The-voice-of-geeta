@@ -7,24 +7,13 @@ body {
     margin: 0;
     padding: 0;
 }
-.adhyay-title-btn {
-    background: none; /* Remove default button background */
-    border: none; /* Remove border */
-    color: yellow; /* Match title color */
-    font-size: 18px; /* Match title font size */
-    font-weight: bold; /* Match title font weight */
-    cursor: pointer; /* Show pointer on hover */
-    text-decoration: none; /* Remove underline */
-}
 
-.adhyay-title-btn:hover {
-        color: orange; /* Slight color change on hover */
-    }
 
-.adhyay-title {
-    color: yellow;
-    font-size: 18px;
-    font-weight: bold;
+
+.title {
+    color: #FFD700;
+    font-size: 36px;
+    margin-top: 30px;
 }
 
 
@@ -85,6 +74,14 @@ body {
         color: #fff;
         margin: 0;
     }
+    .shloka-card a {
+        text-decoration: none;
+        color: #FFD700;
+        transition: 0.3s;
+    }
+    .shloka-card a:hover {
+                color: #ffcc00;
+            }
 
 .buttons {
     margin-top: 10px;
