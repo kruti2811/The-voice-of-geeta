@@ -1,6 +1,6 @@
-﻿<!-- Views/Shared/_Navbar.cshtml -->
-<head>
+﻿<head>
     <link rel="stylesheet" href="~/css/navbar.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <nav class="navbar">
@@ -9,18 +9,28 @@
             <img src="~/images/Rose.png" alt="Voice of Geeta" />
             <span>Voice of Geeta</span>
         </div>
+
         <!-- Hamburger Menu for Mobile -->
         <div class="menu-toggle" onclick="toggleMenu()">
             ☰
         </div>
+
         <ul class="nav-links">
             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
             <li><a href="@Url.Action("Adhyay", "Home")">Adhyay</a></li>
             <li><a href="@Url.Action("vedas", "Home")">Vedas</a></li>
             <li><a href="@Url.Action("Teachings", "Home")">Teachings</a></li>
         </ul>
+
+        <!-- Profile Dropdown -->
         <div class="profile-icon">
-            <img src="~/images/profile.png" alt="" />
+            <img src="~/images/profile.png" alt="User Profile" id="profileIcon" />
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <li><a href="@Url.Action("Profile", "Account")">Profile</a></li>
+                    <li><a href="@Url.Action("Logout", "Account")">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -29,4 +39,67 @@
     function toggleMenu() {
         document.querySelector('.nav-links').classList.toggle('active');
     }
+
+    $(document).ready(function () {
+        $('#profileIcon').click(function (event) {
+            event.stopPropagation();
+            $('#dropdownMenu').toggle();
+        });
+
+        // Hide dropdown when clicking outside
+        $(document).click(function () {
+            $('#dropdownMenu').hide();
+        });
+
+        $('#dropdownMenu').click(function (event) {
+            event.stopPropagation();
+        });
+    });
 </script>
+
+<style>
+    .profile-icon {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        min-width: 120px;
+        z-index: 1000;
+    }
+
+        .dropdown-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .dropdown-menu ul li {
+                padding: 10px;
+                text-align: center;
+            }
+
+                .dropdown-menu ul li:hover {
+                    background-color: #f0f0f0;
+                }
+
+                .dropdown-menu ul li a {
+                    text-decoration: none;
+                    color: black;
+                    display: block;
+                }
+</style>
