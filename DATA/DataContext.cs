@@ -8,5 +8,7 @@ namespace The_voice_of_geeta.DATA
         {
         }
         public DbSet<LoginModel> login { get; set; }
+        public DbSet<Usermodel> Users { get; set; }
+
     }
 }
