@@ -12,6 +12,9 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
-
+        public IActionResult adhyayVideo()
+        {
+            return View();
+        }
     }
 }
