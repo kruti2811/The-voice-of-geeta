@@ -29,7 +29,7 @@
             <img src="~/images/profile.png" alt="User Profile" id="profileIcon" />
             <div class="dropdown-menu" id="dropdownMenu">
                 <ul>
-                    <li><a href="@Url.Action("Editprofile", "Editprofile")">Editprofile</a></li>
+                    <li><a href="@Url.Action("Editprofile", "Home")">Editprofile</a></li>
                     @if (Context.Session.GetString("Username") != null)
                     {
                         <li class="nav-item">

@@ -1,5 +1,114 @@
-﻿
-@{
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewData["Title"] = "Active user";
 }
-<h2>Active Users List Here</h2>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .dashboard-container {
+        max-width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .profile-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: gold;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .table-container {
+        border: 2px solid #d9534f;
+        border-radius: 10px;
+        padding: 15px;
+        background: white;
+        width: 80%;
+        margin: auto;
+        text-align: left;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .table th {
+            background: #f8f8f8;
+        }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn-edit {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="header">Admin Dashboard</div>
+
+    <div class="profile-icon">👤</div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Register</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Kruti</td>
+                    <td>1234554329</td>
+                    <td>Kp@948</td>
+                    <td>
+                        <button class="btn btn-edit">Edit</button>
+                        <button class="btn btn-delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 500px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
+
+    .header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .notification {
+        text-align: left;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+        .notification img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+    .info {
+        text-align: left;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        text-align: justify;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="header">Admin Dashboard</div>
+
+<div class="notification">
+    <span>🔔 <span style="color: red;">Daily Shlokas</span></span>
+</div>
+
+<div class="container">
+    <div class="info">
+        <strong>Adhyay :</strong> 2
+    </div>
+    <div class="info">
+        <strong>Shlokas Description :</strong>
+    </div>
+    <div class="description">
+        भगवद्गीता के दूसरे अध्याय के सातवें श्लोक में अर्जुन ने श्रीकृष्ण से धर्म के पथ पर चलने का उपदेश मांगा है।
+        इस श्लोक में अर्जुन ने यह स्वीकार किया है कि उस पर 'कार्पण्यदोष' हावी हो गया है।
+    </div>
+    <button class="btn">ADD</button>
+</div>

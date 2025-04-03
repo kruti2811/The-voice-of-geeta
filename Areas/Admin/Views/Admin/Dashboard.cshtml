@@ -1,7 +1,82 @@
 ﻿@{
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; // ✅ Use Admin Layout
+    ViewData["Title"] = "Admin Dashboard";
 }
 
-<h2>Admin Dashboard</h2>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
 
-<p>Welcome to the admin panel.</p>
+    .dashboard-container {
+        max-width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stat-box {
+        border: 2px solid #d9534f;
+        border-radius: 10px;
+        padding: 15px;
+        width: 150px;
+        text-align: center;
+        color: #d9534f;
+        font-weight: bold;
+        background-color: white;
+    }
+
+    .stat-number {
+        font-size: 20px;
+        margin-top: 5px;
+        font-weight: normal;
+    }
+
+    .profile-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: gold;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="header">Admin Dashboard</div>
+
+    <div class="profile-icon">👤</div>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            Total Adhyayas
+            <div class="stat-number">18</div>
+        </div>
+        <div class="stat-box">
+            Total Shlokas
+            <div class="stat-number">700</div>
+        </div>
+        <div class="stat-box">
+            Active Users
+            <div class="stat-number">150</div>
+        </div>
+    </div>
+</div>
