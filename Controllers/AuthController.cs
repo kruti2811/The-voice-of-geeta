@@ -14,21 +14,23 @@ namespace The_voice_of_geeta.Controllers
             _context = context;
         }
 
-        // GET: Login Page
         [HttpGet]
-        public IActionResult login() => View();
+        public IActionResult login()
+        {
+            return View();
+        }
 
         // POST: Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult login(string username, string password)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-            if (user != null)
+            var user = _context.Users.FirstOrDefault(u => u.Username == username);
+
+            if (user != null && user.Password == password) // ⚠️ Use Hashing in Production
             {
-                // Store user session
                 HttpContext.Session.SetString("Username", user.Username);
-                return RedirectToAction("Dashboard", "Home"); // Redirect to Home Dashboard
+                return RedirectToAction("Index", "Home"); // Redirect to Dashboard
             }
             else
             {
