@@ -7,7 +7,6 @@ using Microsoft.Data.SqlClient;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSession();
-
 builder.Services.AddDistributedMemoryCache();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -18,6 +17,7 @@ builder.Services.AddDbContext<DataContext>(
 
 var app = builder.Build();
 
+app.UseSession();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -37,7 +37,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.UseSession();
+
 
 app.UseRouting();
 

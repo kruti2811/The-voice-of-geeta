@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var hideNavbarPages = new List<string> { "login", "register" };
+    var currentPage = ViewContext.RouteData.Values["action"]?.ToString()?.ToLower();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,8 +14,11 @@
     <link rel="stylesheet" href="~/css/vedas.css" />
 </head>
 <body>
-    @Html.Partial("_Navbar")
-
+    @if (!hideNavbarPages.Contains(currentPage))
+    {
+        @Html.Partial("_Navbar")
+        // ✅ Show navbar only on allowed pages
+    }
     <div class="content">
         @RenderBody()
     </div>

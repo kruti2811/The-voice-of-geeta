@@ -59,11 +59,10 @@ namespace The_voice_of_geeta.Controllers
             return View(model);
         }
 
-        // Logout Functionality
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
-            return RedirectToAction("login");
+            HttpContext.Session.Clear(); // Clear user session
+            return RedirectToAction("login"); // Redirect to login page
         }
     }
 }
