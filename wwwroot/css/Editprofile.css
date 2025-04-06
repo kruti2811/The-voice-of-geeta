@@ -1,5 +1,4 @@
-﻿
-/* General Page Styling */
+﻿/* General Page Styling */
 body {
     background: linear-gradient(to bottom right, #1e032a, #5c0561);
     color: white;
@@ -100,4 +99,3 @@ body {
     .btn-submit:hover {
         background: #6a1cb7;
     }
-

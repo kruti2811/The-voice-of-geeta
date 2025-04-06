@@ -1,0 +1,82 @@
+﻿@model The_voice_of_geeta.Areas.Admin.Models.Shloka
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .shloka-form-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+        .shloka-form-container h2 {
+            text-align: center;
+            
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+    .form-control {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    textarea.form-control {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        resize: none;
+        min-height: 100px;
+        overflow: hidden;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+.shloka-form-container
+    
+    {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+
+    }
+</style>
+
+<div class="shloka-form-container">
+    <h2>Add New Shloka</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Adhyay Number</label>
+            <input type="number" asp-for="AdhyayNumber" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Shloka Description <small>(Max 500 characters)</small></label>
+            <textarea asp-for="ShlokaDescription" class="form-control" rows="4" maxlength="500" oninput="autoExpand(this)" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Shloka</button>
+    </form>
+</div>
+
+<script>
+    function autoExpand(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight) + 'px';
+    }
+
+    // Trigger autoExpand on page load (if textarea already has content)
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('textarea').forEach(autoExpand);
+    });
+</script>

@@ -1,0 +1,152 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #c99a5c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #000;
+}
+
+    .sidebar .logo img {
+        width: 170px;
+        height: 100px;
+        margin-left:10px;
+    }
+
+    .sidebar .logo h4 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+            .sidebar ul li a {
+                color: #000;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                .sidebar ul li a:hover {
+                    color: white;
+                }
+
+.content {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dashboard-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    border: 1px solid #e28585;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    color: #e28585;
+    font-weight: bold;
+    background-color: #fff8f8;
+}
+
+    .stat-card span {
+        display: block;
+        font-size: 22px;
+        margin-top: 5px;
+        color: #000;
+    }
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 16px;
+    min-width: 100%;
+    border: 1px solid #ddd;
+}
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .styled-table th {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .styled-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .styled-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+.btn-block {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .btn-block:hover {
+        background-color: #c82333;
+    }
+.main-container {
+    width: 100%;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.page-heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.profile-icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}

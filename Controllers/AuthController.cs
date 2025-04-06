@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using The_voice_of_geeta.DATA;
 using The_voice_of_geeta.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace The_voice_of_geeta.Controllers
 {
@@ -14,8 +15,9 @@ namespace The_voice_of_geeta.Controllers
             _context = context;
         }
 
+        // GET: Login Page
         [HttpGet]
-        public IActionResult login()
+        public IActionResult Login()
         {
             return View();
         }
@@ -23,46 +25,95 @@ namespace The_voice_of_geeta.Controllers
         // POST: Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult login(string username, string password)
+        public IActionResult Login(string username, string password)
         {
+            // 🔐 1. Admin Shortcut Login
+            if (username == "Kruti28" && password == "KrutiPatel")
+            {
+                return RedirectToAction("Index", "Admin", new { area = "Admin" });
+            }
+
+            // 🔐 2. Regular User Login via Database
             var user = _context.Users.FirstOrDefault(u => u.Username == username);
 
             if (user != null && user.Password == password) // ⚠️ Use Hashing in Production
             {
                 HttpContext.Session.SetString("Username", user.Username);
-                return RedirectToAction("Index", "Home"); // Redirect to Dashboard
+                return RedirectToAction("Index", "Home"); // Redirect to User Dashboard
             }
-            else
-            {
-                ViewBag.Error = "Invalid username or password.";
-                return View();
-            }
+
+            ViewBag.Error = "Invalid username or password!";
+            return View();
         }
 
         // GET: Register Page
         [HttpGet]
-        public IActionResult register() => View();
+        public IActionResult Register() => View();
 
         // POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult register(Usermodel model)
+        public IActionResult Register(Usermodel model)
         {
             if (ModelState.IsValid)
             {
                 _context.Users.Add(model);
                 _context.SaveChanges();
 
-                // Redirect to login page after successful registration
-                return RedirectToAction("login");
+                return RedirectToAction("Login");
             }
             return View(model);
         }
 
+        // Logout
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear(); // Clear user session
-            return RedirectToAction("login"); // Redirect to login page
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
+
+        // GET: Edit Profile
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            string username = HttpContext.Session.GetString("Username");
+            if (username == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Username == username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        // POST: Save Profile
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditProfile(Usermodel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = _context.Users.FirstOrDefault(u => u.UserId == model.UserId);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                user.Username = model.Username;
+                user.Email = model.Email;
+                user.Password = model.Password; // ⚠️ Hash in production
+
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Profile updated successfully!";
+                return RedirectToAction("EditProfile");
+            }
+
+            return View(model);
         }
     }
 }

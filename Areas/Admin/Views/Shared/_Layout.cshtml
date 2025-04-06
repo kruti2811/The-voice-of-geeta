@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="~/images/logo5.png" alt="Logo" />
+        </div>
+        <ul>
+            <li><a href="@Url.Action("Index", "Admin", new { area = "Admin" })">Dashboard</a></li>
+            <li><a href="@Url.Action("ActiveUsers", "Users", new { area = "Admin" })">Active Users</a></li>
+            <li><a href="@Url.Action("DailyShlokas", "Shlokas", new { area = "Admin" })">Daily Shlokas</a></li>
+            <li><a href="@Url.Action("AddShlokas", "Shlokas", new { area = "Admin" })">Add New Shloka</a></li>
+            <li><a href="@Url.Action("Logout", "Auth", new { area = "Admin" })">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-container">
+        <div class="topbar">
+            <h2 class="page-heading">Admin Dashboard</h2>
+            <div class="profile-icon">
+                <a href="@Url.Action("Profile", "Admin", new { area = "Admin" })">
+                    <img src="~/images/account.png" alt="Profile" />
+                </a>
+            </div>
+
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

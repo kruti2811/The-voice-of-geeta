@@ -35,5 +35,9 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
+        
+=======
+>>>>>>> c8a8febf9df6f003d37f762a492c0c0863dc6c53
     }
 }
