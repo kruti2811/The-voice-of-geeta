@@ -23,6 +23,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\admin.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\admin.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">

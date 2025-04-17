@@ -1,0 +1,110 @@
+﻿@model The_voice_of_geeta.Areas.Admin.Models.Shloka
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; // Use your layout again
+}
+<style>
+    .shloka-form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+
+        .shloka-form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+        .form-control:focus {
+            border-color: #0069d9;
+            outline: none;
+        }
+
+    textarea.form-control {
+        resize: none;
+        min-height: 150px;
+    }
+
+    .btn-primary {
+        background-color: #0069d9;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-primary:active {
+            background-color: #004085;
+        }
+
+    .form-label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .mb-3 {
+        margin-bottom: 20px;
+    }
+
+    .text-danger {
+        color: #d9534f;
+        font-size: 14px;
+    }
+
+    .shloka-form-container .success-msg {
+        text-align: center;
+        font-size: 16px;
+        color: green;
+        margin-bottom: 20px;
+    }
+</style>
+<div class="shloka-form-container">
+    <h2>Add New Shloka</h2>
+
+    <form asp-action="AddShlokas" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label class="form-label">Adhyay Number</label>
+            <input type="number" asp-for="AdhyayNumber" class="form-control" required />
+            <span asp-validation-for="AdhyayNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Shloka Description</label>
+            <textarea asp-for="ShlokaDescription" class="form-control" rows="4" maxlength="500" required></textarea>
+            <span asp-validation-for="ShlokaDescription" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Shloka</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

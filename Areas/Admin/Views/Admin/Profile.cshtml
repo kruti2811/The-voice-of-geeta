@@ -1,13 +1,69 @@
 ﻿
+
 @{
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Admin Profile</h2>
+<h2 class="profile-heading">Admin Profile</h2>
 
-<div class="card p-4 shadow">
-    <h3>Name: John Doe</h3>
-    <p>Email: admin@geeta.com</p>
-    <p>Role: Super Admin</p>
-    <button class="btn btn-primary">Edit Profile</button>
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-image">
+            <!-- Placeholder for profile image, you can replace this with actual user image later -->
+            <img src="~/images/account.png" alt="Admin Profile Picture" />
+        </div>
+
+        <div class="profile-details">
+            <p>Username: Kruti28</p>
+            <p>Email: admin@gmail.com</p>
+        </div>
+    </div>
 </div>
+
+<style>
+    .profile-heading {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .profile-card {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #3498db;
+    }
+
+    .profile-details {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #555;
+    }
+
+        .profile-details p {
+            margin: 8px 0;
+        }
+
+        .profile-details strong {
+            color: #3498db;
+        }
+</style>

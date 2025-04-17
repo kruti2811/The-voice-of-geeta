@@ -20,5 +20,13 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
+        public IActionResult Video()
+        {
+            return View();
+        }
+        public IActionResult Audio()
+        {
+            return View();
+        }
     }
 }

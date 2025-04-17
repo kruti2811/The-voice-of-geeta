@@ -21,8 +21,8 @@
                 <div class="shloka-card">
                     <h2>Adhyay 1</h2>
                     <img src="\images\adhyay1.jpg" alt="Adhyay 1">
-                    <button class="video-btn" data-src="~/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="~/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn" >🎤</button>
                 </div>
 
                 <!-- Shloka Card 2 -->
@@ -30,101 +30,42 @@
                 <div class="shloka-card">
                     <h2>Adhyayaaa 2</h2>
                     <img src="\images\adhyay2.jpg" alt="Adhyay 2">
-                    <button class="video-btn" data-src="/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn">🎤</button>
                 </div>
 
                 <!-- Shloka Card 3 -->
                 <div class="shloka-card">
                     <h2>Adhyay 3</h2>
                     <img src="\images\adhyay3.jpg" alt="Adhyay 3">
-                    <button class="video-btn" data-src="~/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="~/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn" >🎤</button>
                 </div>
 
                 <!-- Shloka Card 4 -->
                 <div class="shloka-card">
                     <h2>Adhyay 4</h2>
                     <img src="\images\adhyay4.jpg" alt="Adhyay 4">
-                    <button class="video-btn" data-src="~/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="~/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn" >🎤</button>
                 </div>
 
                 <!-- Shloka Card 5 -->
                 <div class="shloka-card">
                     <h2>Adhyay 5</h2>
                     <img src="\images\adhyay5.jpg" alt="Adhyay 5">
-                    <button class="video-btn" data-src="/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn" >🎤</button>
                 </div>
 
                 <!-- Shloka Card 6 -->
                 <div class="shloka-card">
                     <h2>Adhyay 6</h2>
                     <img src="\images\adhyay6.jpg" alt="Adhyay 6">
-                    <button class="video-btn" data-src="/videos/adhyay1.mp4">📹</button>
-                    <button class="audio-btn" data-src="/audio/adhyay1.mp3">🎤</button>
+                    <button class="video-btn" >📹</button>
+                    <button class="audio-btn" >🎤</button>
                 </div>
-                <video id="videoPlayer" width="600" controls style="display:none;">
-                    <source id="videoSource" src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
-                <audio id="audioPlayer" controls style="display:none;">
-                    <source id="audioSource" src="" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        let videoPlayer = document.getElementById("videoPlayer");
-                        let videoSource = document.getElementById("videoSource");
-                        let audioPlayer = document.getElementById("audioPlayer");
-                        let audioSource = document.getElementById("audioSource");
-
-                        // Video Button Click Handler
-                        document.querySelectorAll(".video-btn").forEach(button => {
-                            button.addEventListener("click", function () {
-                                let videoSrc = this.getAttribute("data-src");
-
-                                if (videoSrc) {
-                                    // Stop audio if playing
-                                    audioPlayer.pause();
-                                    audioPlayer.style.display = "none";
-
-                                    // Play Video
-                                    videoSource.src = videoSrc;
-                                    videoPlayer.style.display = "block";
-                                    videoPlayer.load();
-                                    videoPlayer.play();
-                                } else {
-                                    alert("Video not available!");
-                                }
-                            });
-                        });
-
-                        // Audio Button Click Handler
-                        document.querySelectorAll(".audio-btn").forEach(button => {
-                            button.addEventListener("click", function () {
-                                let audioSrc = this.getAttribute("data-src");
-
-                                if (audioSrc) {
-                                    // Stop video if playing
-                                    videoPlayer.pause();
-                                    videoPlayer.style.display = "none";
-
-                                    // Play Audio
-                                    audioSource.src = audioSrc;
-                                    audioPlayer.style.display = "block";
-                                    audioPlayer.load();
-                                    audioPlayer.play();
-                                } else {
-                                    alert("Audio not available!");
-                                }
-                            });
-                        });
-                    });
-                </script>
+            
             </div>
         </div>
     </form>

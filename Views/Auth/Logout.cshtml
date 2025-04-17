@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Logging Out...";
+    Layout = null;
+    <!-- No Layout (Optional) -->
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out...</title>
+    <script>
+        setTimeout(function () {
+            window.location.href = '@Url.Action("login", "Auth")'; // Redirect to login page
+        }, 2000); // Redirect after 2 seconds
+    </script>
+</head>
+<body>
+    <h2>Logging out...</h2>
+    <p>Please wait while we redirect you to the login page.</p>
+</body>
+</html>

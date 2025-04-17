@@ -17,26 +17,27 @@
 </head>
 <body>
     <div class="login-container">
-        <!-- Left Side (Login Form) -->
         <div class="login-form">
             <h2>Login</h2>
             <p>Start Your Life with Divine Wisdom!</p>
-            <img src="~\images\krishnaicon.png" alt="Krishna Icon" class="logo" />
+            <img src="~/images/krishnaicon.png" alt="Krishna Icon" class="logo1" />
 
-            <input type="text" placeholder="Enter Your Username" class="input-field">
-            <input type="password" placeholder="Enter Your Password" class="input-field">
+            @if (ViewBag.Error != null)
+            {
+                <p style="color: red;">@ViewBag.Error</p>
+            }
 
-            <button class="submit-btn">Submit</button>
-
-            <p class="forgot-password">Forgot Password ?</p>
+            <!-- ✅ Add Form to Send Data to Controller -->
+            <form asp-action="Login" method="post">
+                <input type="text" name="username" placeholder="Enter Your Username" class="input-field" required>
+                <input type="password" name="password" placeholder="Enter Your Password" class="input-field" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
 
-        <!-- Right Side (Image Section) -->
         <div class="image-section">
-            <img src="~\images\bhgvad_geeta1.png" alt="Bhagavad Gita" class="right-image">
+            <img src="~/images/bhgvad_geeta1.png" alt="Bhagavad Gita" class="right-image">
         </div>
     </div>
 </body>
 </html>
-
-

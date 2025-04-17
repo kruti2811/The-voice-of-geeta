@@ -1,19 +1,29 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var hideNavbarPages = new List<string> { "login", "register" };
+    var currentPage = ViewContext.RouteData.Values["action"]?.ToString()?.ToLower();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - The_voice_of_geeta</title>
-     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-     <link rel="stylesheet" href="~/The_voice_of_geeta.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/The_voice_of_geeta.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/vedas.css" />
 </head>
 <body>
-    @Html.Partial("_Navbar")
-    
+    @if (!hideNavbarPages.Contains(currentPage))
+    {
+        @Html.Partial("_Navbar")
+        // ✅ Show navbar only on allowed pages
+    }
     <div class="content">
         @RenderBody()
     </div>
+
+    @RenderSection("Scripts", required: false) <!-- ✅ Fix: Added Scripts section -->
+
 </body>
 </html>
