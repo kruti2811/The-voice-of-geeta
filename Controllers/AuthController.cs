@@ -60,10 +60,12 @@ namespace The_voice_of_geeta.Controllers
                 _context.Users.Add(model);
                 _context.SaveChanges();
 
+
                 return RedirectToAction("Login");
             }
             return View(model);
         }
+        
 
         // Logout
         public IActionResult Logout()
@@ -72,7 +74,28 @@ namespace The_voice_of_geeta.Controllers
             return RedirectToAction("Login");
         }
 
+
         // GET: Edit Profile
+        [HttpGet]
+        public IActionResult Profile()
+        {
+
+            string username = HttpContext.Session.GetString("Username");
+            if (string.IsNullOrEmpty(username))
+            {
+                return RedirectToAction("Login");
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Username == username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+
         [HttpGet]
         public IActionResult EditProfile()
         {
@@ -88,10 +111,8 @@ namespace The_voice_of_geeta.Controllers
                 return NotFound();
             }
 
-            return View(user);
+            return View(user); 
         }
-
-        // POST: Save Profile
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EditProfile(Usermodel model)
@@ -104,16 +125,20 @@ namespace The_voice_of_geeta.Controllers
                     return NotFound();
                 }
 
+                // Update fields
                 user.Username = model.Username;
                 user.Email = model.Email;
-                user.Password = model.Password; // ⚠️ Hash in production
+                user.Password = model.Password; // ⚠️ In production, hash the password
 
-                _context.SaveChanges();
+                _context.SaveChanges(); // ✅ Save changes to the database
+
                 TempData["SuccessMessage"] = "Profile updated successfully!";
-                return RedirectToAction("EditProfile");
+                return RedirectToAction("Profile");
             }
 
             return View(model);
         }
+
+
     }
 }

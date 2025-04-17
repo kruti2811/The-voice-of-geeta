@@ -1,21 +1,38 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using The_voice_of_geeta.DATA;
+using System.Linq;
 using The_voice_of_geeta.Models;
 
 namespace The_voice_of_geeta.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _context;
+
+        public HomeController(DataContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
+            ViewBag.DailyShloka = _context.Shlokas.FirstOrDefault(s => s.IsVisible == true);
+
+            var latestVisibleShloka = _context.Shlokas
+        .Where(s => s.IsVisible)
+        .OrderByDescending(s => s.Id) // You can also use CreatedDate if available
+        .FirstOrDefault();
+
+            ViewBag.DailyShloka = latestVisibleShloka;
+
             return View();
         }
-        
 
         public IActionResult Adhyay()
         {
             return View();
         }
+
         public IActionResult ShlokaList(int id)
         {
             ViewBag.AdhyayId = id;
@@ -31,13 +48,28 @@ namespace The_voice_of_geeta.Controllers
         {
             return View();
         }
+
         public IActionResult Editprofile()
         {
             return View();
         }
-<<<<<<< HEAD
-        
-=======
->>>>>>> c8a8febf9df6f003d37f762a492c0c0863dc6c53
+        [HttpGet]
+        public IActionResult GetVisibleShloka()
+        {
+            var shloka = _context.Shlokas.FirstOrDefault(s => s.IsVisible == true);
+
+            if (shloka != null)
+            {
+                return Json(new
+                {
+                    success = true,
+                    adhyay = shloka.AdhyayNumber,
+                    description = shloka.ShlokaDescription
+                });
+            }
+
+            return Json(new { success = false });
+        }
+
     }
 }

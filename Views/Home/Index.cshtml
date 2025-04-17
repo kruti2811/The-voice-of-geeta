@@ -1,5 +1,4 @@
 ﻿
-
 <div class="container">
     <!-- Page Title -->
     <h2 class="page-title">📖 Voice of Geeta</h2>
@@ -21,16 +20,39 @@
             <p>Vedic knowledge is a complete guide to life, teaching spirituality, ethics, science, and self-discipline, leading to ultimate wisdom and inner peace.</p>
         </div>
 
-        <!-- Daily Shloka Card -->
-        <div class="card">
+        <div class="card" id="daily-shloka-card" ">
             <h3>🔔 Daily Shlokas</h3>
-            <p>Take the first step today! Begin your journey towards spiritual growth, resilience, and true happiness. Share this wisdom with others and uplift those around you!</p>
+            <p id="daily-shloka-content">
+                Loading shloka...
+            </p>
         </div>
+
+        @section Scripts {
+            <script>
+                function loadDailyShloka() {
+                    fetch('/Home/GetVisibleShloka')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                document.getElementById("daily-shloka-content").innerHTML =
+                                    `<strong>Adhyay ${data.adhyay}</strong><br>${data.description}`;
+                            } else {
+                                document.getElementById("daily-shloka-content").innerText = "No shlokas available.";
+                            }
+                        })
+                        .catch(error => {
+                            document.getElementById("daily-shloka-content").innerText = "Error loading shloka.";
+                            console.error('Error:', error);
+                        });
+                }
+
+                // Call once page loads
+                document.addEventListener("DOMContentLoaded", loadDailyShloka);
+            </script>
+        }
+
+
         
-        @* <video width="640" height="360" controls> *@
-        @*     <source src="~/videos/Mood.mp4" type="video/mp4"> *@
-        @*     Your browser does not support the video tag. *@
-        @* </video> *@
 
 
     </div>
@@ -89,3 +111,4 @@
             color: #fff;
         }
 </style>
+

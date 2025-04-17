@@ -12,10 +12,10 @@
         </div>
         <ul>
             <li><a href="@Url.Action("Index", "Admin", new { area = "Admin" })">Dashboard</a></li>
-            <li><a href="@Url.Action("ActiveUsers", "Users", new { area = "Admin" })">Active Users</a></li>
+            <li><a href="@Url.Action("ActiveUsers", "Admin", new { area = "Admin" })">Active Users</a></li>
             <li><a href="@Url.Action("DailyShlokas", "Shlokas", new { area = "Admin" })">Daily Shlokas</a></li>
             <li><a href="@Url.Action("AddShlokas", "Shlokas", new { area = "Admin" })">Add New Shloka</a></li>
-            <li><a href="@Url.Action("Logout", "Auth", new { area = "Admin" })">Logout</a></li>
+            <li><a href="@Url.Action("Logout", "Admin", new { area = "Admin" })">Logout</a></li>
         </ul>
     </div>
 
@@ -34,5 +34,7 @@
             @RenderBody()
         </div>
     </div>
+    @RenderSection("Scripts", required: false)
+
 </body>
 </html>

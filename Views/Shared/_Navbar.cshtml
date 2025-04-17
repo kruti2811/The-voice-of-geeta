@@ -1,6 +1,14 @@
 ﻿<head>
     <link rel="stylesheet" href="~/css/navbar.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    @{
+        var username = Context.Session.GetString("Username");
+        if (!string.IsNullOrEmpty(username))
+        {
+            <span style="margin-right:20px;">👋 Welcome, @username!</span>
+        }
+    }
 </head>
 
 <nav class="navbar">
@@ -14,7 +22,6 @@
         <div class="menu-toggle" onclick="toggleMenu()">u
             ☰
         </div>
-
         <ul class="nav-links">
             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
             <li><a href="@Url.Action("Adhyay", "Home")">Adhyay</a></li>
@@ -29,7 +36,7 @@
             <img src="~/images/profile.png" alt="User Profile" id="profileIcon" />
             <div class="dropdown-menu" id="dropdownMenu">
                 <ul>
-                    <li><a href="@Url.Action("Editprofile", "Home")">Editprofile</a></li>
+                    <li><a href="@Url.Action("Profile", "Auth")">profile</a></li>
                     @if (Context.Session.GetString("Username") != null)
                     {
                         <li class="nav-item">

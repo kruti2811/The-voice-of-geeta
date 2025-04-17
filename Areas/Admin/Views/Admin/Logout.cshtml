@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Logout</title>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="logout-container">
+        <div class="logout-message">
+            <h2>You have successfully logged out.</h2>
+            <p>You will be redirected to the login page shortly...</p>
+        </div>
+    </div>
+
+    <style>
+        .logout-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .logout-message {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .logout-message h2 {
+                font-size: 24px;
+                color: #2ecc71;
+            }
+
+            .logout-message p {
+                font-size: 16px;
+                color: #7f8c8d;
+            }
+    </style>
+
+    <script>
+        // Redirect to login page after 3 seconds
+        setTimeout(function () {
+            window.location.href = '@Url.Action("Login", "Auth", new { area = "" })';
+        }, 3000); // Adjust the delay time as needed (3 seconds here)
+    </script>
+</body>
+</html>

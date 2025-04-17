@@ -8,7 +8,7 @@
 <div class="dashboard-stats">
     <div class="stat-card">
         Total Adhyayas
-        <span>18</span>
+        <span>6</span>
     </div>
     <div class="stat-card">
         Total Shlokas
@@ -16,6 +16,34 @@
     </div>
     <div class="stat-card">
         Active Users
-        <span>150</span>
+        <span>@ViewBag.ActiveUsers</span>
     </div>
+
 </div>
+<style>
+    .stat-card {
+        background-color: #fff8e1; /* Light gold background */
+        border: 2px solid #ffa000; /* Amber border */
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        color: #4e342e; /* Deep brown text */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-card span {
+            display: block;
+            margin-top: 10px;
+            font-size: 2rem;
+            color: #d84315; /* Deep orange/red for the number */
+        }
+
+
+</style>
